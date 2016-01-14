@@ -2,7 +2,6 @@
   "name": "refactored-pancake",
   "version": "1.0.0",
   "description": "ES6 and AngularJS project",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +15,10 @@
     "url": "https://github.com/juaniiie/refactored-pancake/issues"
   },
   "homepage": "https://github.com/juaniiie/refactored-pancake#readme",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15"
+  },
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",

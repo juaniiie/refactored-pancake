@@ -10,7 +10,7 @@ module.exports = {
 
    /*
    * Sourcemap will be used for debugging
-   * It maps the bundle to the source file, so will enable error tracing 
+   * It maps the bundle to the source file, so it will enable error tracing 
    */
     devtool: 'sourcemap',
 

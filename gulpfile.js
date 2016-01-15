@@ -19,8 +19,18 @@ gulp.task('serve', function() {
   });
 });
 
+var paths = {
+  app: 
+  ['client/controllers/**/*.js',
+    'client/templates/**/*.html',
+    'client/app.config.js',
+    'client/app.js',
+    'clent/index.html'
+  ]
+};
+
 gulp.task('watch', function() {
-  gulp.watch('client/**/*.{js,css,html}', ['build',serve.reload]);
+  gulp.watch(paths.app, ['build',serve.reload]);
 });
 
 gulp.task('default', function(done) {

@@ -24,6 +24,7 @@ var paths = {
   ['client/controllers/**/*.js',
     'client/templates/**/*.html',
     'client/app.config.js',
+    'client/services/services.js',
     'client/app.js',
     'clent/index.html'
   ]

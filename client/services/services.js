@@ -4,7 +4,6 @@ export default class HomeService {
     }
 
     getName() {
-        console.log('getnName called')
         const totalNames = this.names.length;
         const rand = Math.floor(Math.random() * totalNames);
         return this.names[rand];

@@ -1,16 +1,11 @@
 export default class HomeController {
     
     constructor(HomeService){
-        this.name = 'World';
-        this.random = HomeService;
+        this.homeService = HomeService;
     }
 
-    changeName() {
-        this.name = 'angular-tips';
-    }
-
-    randomName() {
-        this.name = this.random.getName();
+    navToForm() {
+        this.homeService.navToForm();
     }
 }
 

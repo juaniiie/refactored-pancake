@@ -1,11 +1,11 @@
 export default class HomeService {
-    constructor() {
-        this.names = ['John', 'Elisa', 'Mark', 'Annie'];
+    constructor($state) {
+        this.state = $state;
     }
 
-    getName() {
-        const totalNames = this.names.length;
-        const rand = Math.floor(Math.random() * totalNames);
-        return this.names[rand];
+    navToForm() {
+        this.state.go('personal');
     }
 }
+
+HomeService.$inject = ['$state'];

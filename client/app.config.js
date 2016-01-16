@@ -1,5 +1,3 @@
-routing.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];
-
 export default function routing($locationProvider, $urlRouterProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
     
@@ -11,5 +9,20 @@ export default function routing($locationProvider, $urlRouterProvider, $statePro
             template: require('./templates/home.html'),
             controller: 'HomeController',
             controllerAs: 'home'
-        });
+        })
+        .state('personal', {
+            url: '/personal',
+            template: require('./templates/personal.html'),
+            controller: 'PersonalController',
+            controllerAs: 'personal'
+        })
+        // .state('car', {
+        //     url: '/car',
+        //     template: require('./templates/car.html'),
+        //     controller: 'CarController',
+        //     controllerAs: 'car'
+        // })
+        ;
 }
+
+routing.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];

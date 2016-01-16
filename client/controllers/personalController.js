@@ -6,7 +6,10 @@ export default class PersonalController {
         this.email = '';
     }
 
-    save() {
-        console.log('saved');
+    next() {
+        localStorage.setItem('firstName', this.first);
+        localStorage.setItem('lastName', this.last);
+        localStorage.setItem('email', this.email);
+        console.log('stored');
     }
 }

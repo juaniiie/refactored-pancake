@@ -1,11 +1,11 @@
-export default class HomeService {
+export default class Services {
     constructor($state) {
         this.state = $state;
     }
 
     navToForm() {
-        this.state.go('personal');
+        this.state.go('form');
     }
 }
 
-HomeService.$inject = ['$state'];
+Services.$inject = ['$state'];

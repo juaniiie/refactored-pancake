@@ -1,0 +1,30 @@
+<form name="userRegistration">
+    <div>
+        <input type="text" 
+               name="first" 
+               placeholder="First name"
+               ng-model="formCtrl.userData.first"
+               ng-change="formCtrl.save()"
+               required>
+    </div>
+    <div>
+        <input type="text" 
+               name="last" 
+               placeholder="Last name"
+               ng-model="formCtrl.userData.last"
+               ng-change="formCtrl.save()"
+               required>
+    </div>
+    <div>
+        <input type="email" 
+               name="email" 
+               placeholder="Email"
+               ng-model="formCtrl.userData.email"
+               ng-change="formCtrl.save()"
+               required>   
+    </div>
+</form>
+<div>
+    <button ng-click="formCtrl.next()"
+            ng-disabled="userRegistration.$invalid">Next</button>
+</div>

@@ -1,0 +1,26 @@
+<form>
+    <div>
+        <input type="number" 
+               name="cardNumber" 
+               placeholder="Credit Card Number"
+               max:"16"
+               ng-model="formCtrl.userData.ccNumber"
+               ng-change="formCtrl.save()"
+               required>
+    </div>
+    <div>
+        <input type="number" 
+               name="expData" 
+               placeholder="Expiration date"
+               max="6"
+               ng-model="formCtrl.userData.expDate"
+               ng-change="formCtrl.save()"
+               required>   
+    </div>
+</form>
+<div>
+    <button ng-click="formCtrl.previous()">Previous</button>
+</div>
+<div>
+    <button ng-click="formCtrl.next()">Next</button>
+</div>

@@ -1,12 +1,12 @@
 export default class HomeController {
     
-    constructor(HomeService){
-        this.homeService = HomeService;
+    constructor(Services){
+        this.service = Services;
     }
 
     navToForm() {
-        this.homeService.navToForm();
+        this.service.navToForm();
     }
 }
 
-HomeController.$inject = ['HomeService'];
+HomeController.$inject = ['Services'];

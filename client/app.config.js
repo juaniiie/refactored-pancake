@@ -8,13 +8,13 @@ export default function routing($locationProvider, $urlRouterProvider, $statePro
             url: '/',
             template: require('./templates/home.html'),
             controller: 'HomeController',
-            controllerAs: 'home'
+            controllerAs: 'homeCtrl'
         })
-        .state('personal', {
-            url: '/personal',
-            template: require('./templates/personal.html'),
-            controller: 'PersonalController',
-            controllerAs: 'personal'
+        .state('form', {
+            url: '/form',
+            template: require('./templates/form.html'),
+            controller: 'FormController',
+            controllerAs: 'formCtrl'
         })
         // .state('car', {
         //     url: '/car',

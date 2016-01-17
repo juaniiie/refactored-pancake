@@ -1,0 +1,33 @@
+<form>
+    <div>
+        <input type="text" 
+               name="make" 
+               placeholder="Make"
+               ng-model="formCtrl.userData.make"
+               ng-change="formCtrl.save()"
+               required>
+    </div>
+    <div>
+        <input type="text" 
+               name="model" 
+               placeholder="Model"
+               ng-model="formCtrl.userData.model"
+               ng-change="formCtrl.save()"
+               required>
+    </div>
+    <div>
+        <input type="number" 
+               name="year" 
+               placeholder="Year"
+               max="4"
+               ng-model="formCtrl.userData.year"
+               ng-change="formCtrl.save()"
+               required>   
+    </div>
+</form>
+<div>
+    <button ng-click="formCtrl.previous()">Previous</button>
+</div>
+<div>
+    <button ng-click="formCtrl.next()">Next</button>
+</div>

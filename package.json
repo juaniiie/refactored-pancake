@@ -17,7 +17,8 @@
   "homepage": "https://github.com/juaniiie/refactored-pancake#readme",
   "dependencies": {
     "angular": "^1.4.8",
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "^0.2.15",
+    "raw-loader": "^0.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",

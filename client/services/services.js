@@ -47,8 +47,6 @@ class FormServices {
         this.next(userData);
         
         if (!this.index.userExists(userData.email)) {
-            
-            console.log('user does not exist');
 
             this.index.registerUser(userData);
 

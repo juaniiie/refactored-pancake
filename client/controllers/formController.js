@@ -1,6 +1,6 @@
 export default class FormController {
     
-    constructor(){
+    constructor($timeout) {
         
         this.userData = {
             first: '',
@@ -8,25 +8,41 @@ export default class FormController {
             email: '',
             make: '',
             model: '',
-            year: 0,
+            year: '',
             ccNumber: '',
             expDate: '',
             page: 1
         };
 
         this.store = localStorage;
+
+        $timeout(() => {
+            this.init();
+        });
+    }
+
+    init() {
+
+        this.userData = JSON.parse(localStorage.getItem('userData'));
     }
 
     save() {
-        this.store.setItem('user', JSON.stringify(this.userData));
+        this.store.setItem('userData', JSON.stringify(this.userData));
     }
 
     next() {
-        this.userData.page += 1;
+        this.userData.page++;
         this.save();
     }
 
     previous() {
-        this.userData.page -= 1; 
+        this.userData.page--; 
+    }
+
+    submit() {
+        this.next();
+        //put in all users index
     }
 }
+
+FormController.$inject = ['$timeout'];

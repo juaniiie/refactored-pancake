@@ -1,6 +1,6 @@
 export default class FormController {
     
-    constructor($timeout) {
+    constructor(Services, $timeout) {
         
         this.userData = {
             first: '',
@@ -14,35 +14,29 @@ export default class FormController {
             page: 1
         };
 
-        this.store = localStorage;
 
         $timeout(() => {
-            this.init();
+            this.userData = Services.init();
         });
-    }
 
-    init() {
-
-        this.userData = JSON.parse(localStorage.getItem('userData'));
+        this.services = Services;
     }
 
     save() {
-        this.store.setItem('userData', JSON.stringify(this.userData));
+        this.services.save(this.userData);
     }
 
     next() {
-        this.userData.page++;
-        this.save();
+        this.services.next(this.userData);
     }
 
     previous() {
-        this.userData.page--; 
+        this.services.previous(this.userData);
     }
 
     submit() {
-        this.next();
-        //put in all users index
+        this.services.submit();
     }
 }
 
-FormController.$inject = ['$timeout'];
+FormController.$inject = ['Services', '$timeout'];

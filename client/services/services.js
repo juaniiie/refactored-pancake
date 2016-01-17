@@ -6,8 +6,26 @@ class FormServices {
         this.index = IndexServices;
     }
 
-    init(userData) {
+    navToForm() {
+        this.state.go('form');
+    }
+
+    init() {
         return JSON.parse(this.storage.getItem('userData'));
+    }
+
+    newUser() {
+        return {
+            first: '',
+            last: '',
+            email: '',
+            make: '',
+            model: '',
+            year: '',
+            ccNumber: '',
+            expDate: '',
+            page: 1
+        };
     }
 
     save(userData) {
@@ -25,19 +43,23 @@ class FormServices {
     }
 
     submit(userData) {
+        
         this.next(userData);
         
-        if(!this.index.userExists(userData.email)) {
+        if (!this.index.userExists(userData.email)) {
+            
             console.log('user does not exist');
-            this.index.registerUser(userData);   
+
+            this.index.registerUser(userData);
+
+            this.storage.removeItem('userData');
+
         } else {
             console.log('user already exists');
         }
+
     }
 
-    navToForm() {
-        this.state.go('form');
-    }
 }
 
 FormServices.$inject = ['$state', 'IndexServices'];
@@ -47,28 +69,26 @@ class IndexServices {
     
     constructor() {
         this.storage = localStorage;
-        this.registeredUser = [];
+        this.registeredUsers = JSON.parse(this.storage.getItem('users')) || [];
     }
 
     registerUser(userData) {
-        console.log('userData', userData);
         this.registeredUsers.push(userData);
-        console.log('registeredUsers:', this.registeredUsers);
         this.storage.setItem('users', JSON.stringify(this.registeredUsers));
     }
 
     userExists(email) {
-        
-    }
-
-    registeredUsersList() {
-        if(this.registeredUsers.length > 0) {
-            return this.registeredUsers.entries();
-        } else {
-            return undefined;
+        for (let user of this.registeredUsers) {
+            if (user.email === email) {
+                return true;
+            }
         }
+        return false;
     }
 
+    fetchRegisteredUsers() {
+        return JSON.parse(this.storage.getItem('users'));
+    }
 
 }
 

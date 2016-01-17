@@ -2,22 +2,11 @@ export default class FormController {
     
     constructor(FormServices, $timeout) {
         
-        this.userData = {
-            first: '',
-            last: '',
-            email: '',
-            make: '',
-            model: '',
-            year: '',
-            ccNumber: '',
-            expDate: '',
-            page: 1
-        };
+        this.userData = angular.extend({}, FormServices.newUser(), FormServices.init());
 
-
-        $timeout(() => {
-            this.userData = FormServices.init() || this.userData;
-        });
+        // $timeout(() => {
+        //     this.userData = FormServices.init() || FormServices.newUser();
+        // });
 
         this.services = FormServices;
     }

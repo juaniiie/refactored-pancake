@@ -2,7 +2,7 @@ export default class IndexController {
     
     constructor(IndexServices) {
         
-        this.registeredUsers = [];
+        this.registeredUsers = IndexServices.fetchRegisteredUsers() || [];
     }
 
 }

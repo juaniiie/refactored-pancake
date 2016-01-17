@@ -1,4 +1,4 @@
-<form>
+<form name="paymentRegistration">
     <div>
         <input type="number" 
                name="cardNumber" 
@@ -22,5 +22,8 @@
     <button ng-click="formCtrl.previous()">Previous</button>
 </div>
 <div>
-    <button ng-click="formCtrl.next()">Next</button>
+    <button ng-click="formCtrl.next()"
+            ng-disabled="paymentRegistration.$invalid">
+            Submit
+    </button>
 </div>

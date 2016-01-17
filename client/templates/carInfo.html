@@ -1,4 +1,4 @@
-<form>
+<form name="carRegistration">
     <div>
         <input type="text" 
                name="make" 
@@ -29,5 +29,8 @@
     <button ng-click="formCtrl.previous()">Previous</button>
 </div>
 <div>
-    <button ng-click="formCtrl.next()">Next</button>
+    <button ng-click="formCtrl.next()"
+            ng-disabled="carRegistration.$invalid">
+            Next
+    </button>
 </div>

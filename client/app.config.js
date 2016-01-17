@@ -15,12 +15,12 @@ export default function routing($urlRouterProvider, $stateProvider) {
             controller: 'FormController',
             controllerAs: 'formCtrl'
         })
-        // .state('car', {
-        //     url: '/car',
-        //     template: require('./templates/car.html'),
-        //     controller: 'CarController',
-        //     controllerAs: 'car'
-        // })
+        .state('index', {
+            url: '/index',
+            template: require('./templates/index.html'),
+            controller: 'IndexController',
+            controllerAs: 'indexCtrl'
+        })
         ;
 }
 

@@ -1,7 +1,9 @@
-export default class Services {
+class FormServices {
     
-    constructor($state) {
+    constructor($state, IndexServices) {
         this.storage = localStorage;
+        this.state = $state;
+        this.index = IndexServices;
     }
 
     init(userData) {
@@ -22,14 +24,52 @@ export default class Services {
         this.save(userData);
     }
 
-    submit() {
-        this.next();
-        //save user to all users index
+    submit(userData) {
+        this.next(userData);
+        
+        if(!this.index.userExists(userData.email)) {
+            console.log('user does not exist');
+            this.index.registerUser(userData);   
+        } else {
+            console.log('user already exists');
+        }
     }
 
     navToForm() {
-        $state.go('form');
+        this.state.go('form');
     }
 }
 
-Services.$inject = ['$state'];
+FormServices.$inject = ['$state', 'IndexServices'];
+
+
+class IndexServices {
+    
+    constructor() {
+        this.storage = localStorage;
+        this.registeredUser = [];
+    }
+
+    registerUser(userData) {
+        console.log('userData', userData);
+        this.registeredUsers.push(userData);
+        console.log('registeredUsers:', this.registeredUsers);
+        this.storage.setItem('users', JSON.stringify(this.registeredUsers));
+    }
+
+    userExists(email) {
+        
+    }
+
+    registeredUsersList() {
+        if(this.registeredUsers.length > 0) {
+            return this.registeredUsers.entries();
+        } else {
+            return undefined;
+        }
+    }
+
+
+}
+
+export { FormServices, IndexServices };

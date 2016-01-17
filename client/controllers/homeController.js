@@ -1,7 +1,7 @@
 export default class HomeController {
     
-    constructor(Services){
-        this.service = Services;
+    constructor(FormServices){
+        this.service = FormServices;
     }
 
     navToForm() {
@@ -9,4 +9,4 @@ export default class HomeController {
     }
 }
 
-HomeController.$inject = ['Services'];
+HomeController.$inject = ['FormServices'];

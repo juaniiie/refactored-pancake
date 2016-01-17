@@ -1,6 +1,6 @@
 export default class FormController {
     
-    constructor(Services, $timeout) {
+    constructor(FormServices, $timeout) {
         
         this.userData = {
             first: '',
@@ -16,10 +16,10 @@ export default class FormController {
 
 
         $timeout(() => {
-            this.userData = Services.init();
+            this.userData = FormServices.init() || this.userData;
         });
 
-        this.services = Services;
+        this.services = FormServices;
     }
 
     save() {
@@ -35,8 +35,8 @@ export default class FormController {
     }
 
     submit() {
-        this.services.submit();
+        this.services.submit(this.userData);
     }
 }
 
-FormController.$inject = ['Services', '$timeout'];
+FormController.$inject = ['FormServices', '$timeout'];

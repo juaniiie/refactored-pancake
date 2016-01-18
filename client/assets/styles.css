@@ -46,6 +46,9 @@ input[type=number]::-webkit-outer-spin-button {
 .pull-right {
     float: right;
 }
+.pull-left {
+    float: left;
+}
 .clearfix {
     clear: both;
 }

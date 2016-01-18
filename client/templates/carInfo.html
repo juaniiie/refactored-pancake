@@ -1,36 +1,48 @@
-<form name="carRegistration">
-    <div>
-        <input type="text" 
-               name="make" 
-               placeholder="Make"
-               ng-model="formCtrl.userData.make"
-               ng-change="formCtrl.save()"
-               required>
+<div class="margins">
+<h3 class="md-display-1">Vehicle</h3> 
+    <form name="carRegistration">
+        <md-input-container class="md-block">
+            <input type="text" 
+                   name="make" 
+                   placeholder="Make"
+                   ng-model="formCtrl.userData.make"
+                   ng-change="formCtrl.save()"
+                   required>
+        </md-input-container class="md-block">
+        <md-input-container class="md-block">
+            <input type="text" 
+                   name="model" 
+                   placeholder="Model"
+                   ng-model="formCtrl.userData.model"
+                   ng-change="formCtrl.save()"
+                   required>
+        </md-input-container class="md-block">
+        <md-input-container class="md-block">
+            <input type="number" 
+                   name="year" 
+                   placeholder="Year"
+                   maxlength="4"
+                   ng-model="formCtrl.userData.year"
+                   ng-change="formCtrl.save()"
+                   required>   
+        </md-input-container class="md-block">
+    </form>
+    <div id="center-parent">
+        <md-button class="md-fab md-accent pull-left"
+                   aria-label="previous"
+                   ng-click="formCtrl.previous()">
+            <md-icon md-svg-src="../assets/previous_36px.svg"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-accent pull-right"
+                   aria-label="next"
+                   ng-click="formCtrl.next()"
+                   ng-disabled="carRegistration.$invalid">
+            <md-icon md-svg-src="../assets/next_36px.svg"></md-icon>
+        </md-button>
+        <div class="grey"
+             id="center-child">
+             Step {{formCtrl.userData.page}} of 3
+        </div>
+        <div class="clearfix"></div>  
     </div>
-    <div>
-        <input type="text" 
-               name="model" 
-               placeholder="Model"
-               ng-model="formCtrl.userData.model"
-               ng-change="formCtrl.save()"
-               required>
-    </div>
-    <div>
-        <input type="number" 
-               name="year" 
-               placeholder="Year"
-               maxlength="4"
-               ng-model="formCtrl.userData.year"
-               ng-change="formCtrl.save()"
-               required>   
-    </div>
-</form>
-<div>
-    <button ng-click="formCtrl.previous()">Previous</button>
-</div>
-<div>
-    <button ng-click="formCtrl.next()"
-            ng-disabled="carRegistration.$invalid">
-            Next
-    </button>
-</div>
+</div>    

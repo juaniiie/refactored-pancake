@@ -1,29 +1,55 @@
-<form name="paymentRegistration">
-    <div>
-        <input type="number" 
-               name="cardNumber" 
-               placeholder="Credit Card Number"
-               maxlength="16"
-               ng-model="formCtrl.userData.ccNumber"
-               ng-change="formCtrl.save()"
-               required>
+<div class="margins">
+    <h3 class="md-display-1">Payment</h3>
+    <form name="paymentRegistration">
+        <md-input-container class="md-block">
+            <input type="number" 
+                   name="cardNumber" 
+                   placeholder="Credit Card Number"
+                   maxlength="16"
+                   ng-model="formCtrl.userData.ccNumber"
+                   ng-change="formCtrl.save()"
+                   required>
+        </md-input-container class="md-block">
+        <md-input-container class="md-block">
+            <input type="number" 
+                   name="expData" 
+                   placeholder="Expiration date"
+                   maxlength="6"
+                   ng-model="formCtrl.userData.expDate"
+                   ng-change="formCtrl.save()"
+                   required>   
+        </md-input-container class="md-block">
+    </form>
+    <div id="center-parent">
+        <md-button class="md-fab md-accent pull-left"
+                   aria-label="previous"
+                   ng-click="formCtrl.previous()">
+            <md-icon md-svg-src="../assets/previous_36px.svg"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-accent md-hue-1 pull-right"
+                   aria-label="submit"
+                   ng-click="formCtrl.submit()"
+                   ng-disabled="paymentRegistration.$invalid">
+            <md-icon md-svg-src="../assets/submit_check_36px.svg"></md-icon>
+        </md-button>
+        <div class="grey"
+             id="center-child">
+             Step {{formCtrl.userData.page}} of 3
+        </div>
+        <div class="clearfix"></div>  
+    </div>   
+</div>
+
+
+
+
+
+<!--     <div>
+        <button ng-click="formCtrl.previous()">Previous</button>
     </div>
     <div>
-        <input type="number" 
-               name="expData" 
-               placeholder="Expiration date"
-               maxlength="6"
-               ng-model="formCtrl.userData.expDate"
-               ng-change="formCtrl.save()"
-               required>   
-    </div>
-</form>
-<div>
-    <button ng-click="formCtrl.previous()">Previous</button>
-</div>
-<div>
-    <button ng-click="formCtrl.submit()"
-            ng-disabled="paymentRegistration.$invalid">
-            Submit
-    </button>
-</div>
+        <button ng-click="formCtrl.submit()"
+                ng-disabled="paymentRegistration.$invalid">
+                Submit
+        </button>
+    </div> -->

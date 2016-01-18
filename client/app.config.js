@@ -40,7 +40,7 @@ export default function routing($urlRouterProvider, $stateProvider, $mdThemingPr
 
      $mdThemingProvider.definePalette('accentColor', {
         '50': 'BDBDBD',
-        '100': 'ffcdd2',
+        '100': '8BC34A',
         '200': 'ef9a9a',
         '300': 'e57373',
         '400': 'ef5350',
@@ -64,7 +64,8 @@ export default function routing($urlRouterProvider, $stateProvider, $mdThemingPr
     $mdThemingProvider.theme('default')
         .primaryPalette('mainColor')
         .accentPalette('accentColor', {
-            'default': '500'
+            'default': '500',
+            'hue-1': '100'
         }); 
 }
 

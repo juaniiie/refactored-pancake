@@ -12,7 +12,9 @@
 
 1. Fork and clone repo
 
-1. Navigate to repo directory 
+1. Navigate to repo directory
+
+1. Make sure you have node v0.12.7 or higher installed 
 
 1. In command line type: `npm install webpack -g`
 
@@ -20,7 +22,9 @@
 
 1. Finally, type: `gulp`
 
-1. On your web-browser navigate to: http://localhost:3000/ 
+1. On your web-browser navigate to: http://localhost:3000
+
+1. To view list of registered users navigate to http://localhost:3000/#/index
 
 ## Requirements
 
@@ -42,5 +46,3 @@
 - run-sequence: 1.1.5
 - style-loader: 0.13.0
 - webpack: 1.12.11
-
-

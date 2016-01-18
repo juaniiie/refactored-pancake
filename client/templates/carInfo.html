@@ -21,10 +21,11 @@
             <input type="number" 
                    name="year" 
                    placeholder="Year"
-                   maxlength="4"
+                   ng-pattern="/^[0-9]{4}$/" 
                    ng-model="formCtrl.userData.year"
                    ng-change="formCtrl.save()"
-                   required>   
+                   required>
+            <div class="hint md-caption grey">YYYY</div>     
         </md-input-container class="md-block">
     </form>
     <div class="center-parent">

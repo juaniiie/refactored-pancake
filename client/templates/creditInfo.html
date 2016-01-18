@@ -2,22 +2,24 @@
     <h3 class="md-display-1">Payment</h3>
     <form name="paymentRegistration">
         <md-input-container class="md-block">
-            <input type="number" 
+            <input type="text" 
                    name="cardNumber" 
                    placeholder="Credit Card Number"
-                   maxlength="16"
+                   ng-pattern="/^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/" 
                    ng-model="formCtrl.userData.ccNumber"
                    ng-change="formCtrl.save()"
                    required>
+            <div class="hint md-caption grey">####-####-####-####</div>       
         </md-input-container class="md-block">
         <md-input-container class="md-block">
-            <input type="number" 
+            <input type="text" 
                    name="expData" 
                    placeholder="Expiration date"
-                   maxlength="6"
+                   ng-pattern="/^[0-9]{2}-[0-9]{4}$/" 
                    ng-model="formCtrl.userData.expDate"
                    ng-change="formCtrl.save()"
-                   required>   
+                   required>
+            <div class="hint md-caption grey">MM-YYYY</div>   
         </md-input-container class="md-block">
     </form>
     <div class="center-parent">

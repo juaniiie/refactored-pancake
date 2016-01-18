@@ -14,7 +14,7 @@
 
 1. Navigate to repo directory 
 
-1. In command line type: `npm install webpack -g'
+1. In command line type: `npm install webpack -g`
 
 1. Then, type: `npm install`
 

@@ -31,11 +31,11 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 20%;
     margin-top: 10%;
 }
-#center-parent {
+.center-parent {
     position: relative;
     text-align: center;
 } 
-#center-child {
+.center-child {
     position: absolute;
     top: 0;
     bottom: 0;

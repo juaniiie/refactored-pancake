@@ -33,12 +33,11 @@ export default function routing($urlRouterProvider, $stateProvider, $mdThemingPr
         'A700': 'd50000',
         'contrastDefaultColor': 'light',    
                                             
-        'contrastDarkColors': ['50', '100', 
-         '200', '300', '400', 'A100'],
+        'contrastDarkColors': ['50', '100', '200', '300', '400', 'A100'],
         'contrastLightColors': undefined
     });
 
-     $mdThemingProvider.definePalette('accentColor', {
+    $mdThemingProvider.definePalette('accentColor', {
         '50': 'BDBDBD',
         '100': '8BC34A',
         '200': 'ef9a9a',
@@ -55,8 +54,7 @@ export default function routing($urlRouterProvider, $stateProvider, $mdThemingPr
         'A700': 'd50000',
         'contrastDefaultColor': 'light',    
                                             
-        'contrastDarkColors': ['50', '100', 
-         '200', '300', '400', 'A100'],
+        'contrastDarkColors': ['50', '100', '200', '300', '400', 'A100'],
         'contrastLightColors': undefined
     });
 

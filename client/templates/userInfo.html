@@ -26,15 +26,14 @@
                  required>   
         </md-input-container>
     </form>
-    <div id="center-parent">
+    <div class="center-parent">
         <md-button class="md-fab md-accent pull-right"
                    aria-label="next"
                    ng-click="formCtrl.next()"
                    ng-disabled="userRegistration.$invalid">
             <md-icon md-svg-src="../assets/next_36px.svg"></md-icon>
         </md-button>
-        <div class="grey"
-             id="center-child">
+        <div class="grey center-child">
              Step {{formCtrl.userData.page}} of 3
         </div>
         <div class="clearfix"></div>

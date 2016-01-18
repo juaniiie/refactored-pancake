@@ -27,7 +27,7 @@
                    required>   
         </md-input-container class="md-block">
     </form>
-    <div id="center-parent">
+    <div class="center-parent">
         <md-button class="md-fab md-accent pull-left"
                    aria-label="previous"
                    ng-click="formCtrl.previous()">
@@ -39,8 +39,7 @@
                    ng-disabled="carRegistration.$invalid">
             <md-icon md-svg-src="../assets/next_36px.svg"></md-icon>
         </md-button>
-        <div class="grey"
-             id="center-child">
+        <div class="grey center-child">
              Step {{formCtrl.userData.page}} of 3
         </div>
         <div class="clearfix"></div>  

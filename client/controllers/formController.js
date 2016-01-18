@@ -9,28 +9,28 @@ export default class FormController {
      * Calls FormServices save function
      */
     save() {
-        this.services.save(angular.copy(this.userData));
+        this.services.save(this.userData);
     }
 
     /**
      * Calls FormServices next function
      */
     next() {
-        this.services.next(angular.copy(this.userData));
+        this.services.next(this.userData);
     }
 
     /**
      * Calls FormServices previous function
      */
     previous() {
-        this.services.previous(angular.copy(this.userData));
+        this.services.previous(this.userData);
     }
 
     /**
      * Calls FormServices submit function
      */
     submit() {
-        this.services.submit(angular.copy(this.userData));
+        this.services.submit(this.userData);
     }
 
     /**

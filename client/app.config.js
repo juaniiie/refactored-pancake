@@ -1,4 +1,4 @@
-export default function routing($urlRouterProvider, $stateProvider) {
+export default function routing($urlRouterProvider, $stateProvider, $mdThemingProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -14,8 +14,13 @@ export default function routing($urlRouterProvider, $stateProvider) {
             template: require('./templates/index.html'),
             controller: 'IndexController',
             controllerAs: 'indexCtrl'
-        })
-        ;
+        });
+
+    $mdThemingProvider.theme('default')
+        .primaryPalette('indigo')
+        .accentPalette('orange', {
+            'default': '500'
+        });    
 }
 
-routing.$inject = ['$urlRouterProvider', '$stateProvider'];
+routing.$inject = ['$urlRouterProvider', '$stateProvider', '$mdThemingProvider'];

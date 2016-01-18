@@ -21,12 +21,13 @@ gulp.task('serve', function() {
 
 var paths = {
   app: 
-  ['client/controllers/**/*.js',
+  [ 'client/controllers/**/*.js',
     'client/templates/**/*.html',
     'client/app.config.js',
     'client/services/services.js',
     'client/app.js',
-    'clent/index.html'
+    'clent/index.html',
+    'client/assets/styles.css'
   ]
 };
 

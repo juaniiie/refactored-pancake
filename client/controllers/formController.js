@@ -4,10 +4,6 @@ export default class FormController {
         
         this.userData = angular.extend({}, FormServices.newUser(), FormServices.init());
 
-        // $timeout(() => {
-        //     this.userData = FormServices.init() || FormServices.newUser();
-        // });
-
         this.services = FormServices;
     }
 

@@ -1,0 +1,51 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.window {
+    height: 100%;
+}
+.page-header {
+    height: 35%;
+    background-color: #84B8C3;
+    color: white;
+}
+.title-font {
+    font-size: 5em;
+    font-weight: lighter;
+}
+.grey {
+    color: #BDBDBD;
+}
+.shadow {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.margins {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+#center-parent {
+    position: relative;
+    text-align: center;
+} 
+#center-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+.pull-right {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}

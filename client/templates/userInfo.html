@@ -1,32 +1,42 @@
-<form name="userRegistration">
-    <div>
-        <input type="text" 
-               name="first" 
-               placeholder="First name"
-               ng-model="formCtrl.userData.first"
-               ng-change="formCtrl.save()"
-               required>
+<div class="margins">
+    <h3 class="md-display-1">Profile</h3>  
+    <form name="userRegistration">
+        <md-input-container class="md-block">
+          <input type="text" 
+                 name="first" 
+                 placeholder="First name"
+                 ng-model="formCtrl.userData.first"
+                 ng-change="formCtrl.save()"
+                 required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <input type="text" 
+                 name="last" 
+                 placeholder="Last name"
+                 ng-model="formCtrl.userData.last"
+                 ng-change="formCtrl.save()"
+                 required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <input type="email" 
+                 name="email" 
+                 placeholder="Email"
+                 ng-model="formCtrl.userData.email"
+                 ng-change="formCtrl.save()"
+                 required>   
+        </md-input-container>
+    </form>
+    <div id="center-parent">
+        <md-button class="md-fab md-accent pull-right"
+                   aria-label="next"
+                   ng-click="formCtrl.next()"
+                   ng-disabled="userRegistration.$invalid">
+            <md-icon md-svg-src="../assets/next_36px.svg"></md-icon>
+        </md-button>
+        <div class="grey"
+             id="center-child">
+             Step {{formCtrl.userData.page}} of 3
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div>
-        <input type="text" 
-               name="last" 
-               placeholder="Last name"
-               ng-model="formCtrl.userData.last"
-               ng-change="formCtrl.save()"
-               required>
-    </div>
-    <div>
-        <input type="email" 
-               name="email" 
-               placeholder="Email"
-               ng-model="formCtrl.userData.email"
-               ng-change="formCtrl.save()"
-               required>   
-    </div>
-</form>
-<div>
-    <button ng-click="formCtrl.next()"
-            ng-disabled="userRegistration.$invalid">
-            Next
-    </button>
-</div>
+</div>    

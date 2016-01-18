@@ -9,8 +9,10 @@ input[type=number]::-webkit-outer-spin-button {
 .window {
     height: 100%;
 }
-.page-header {
+.height-35 {
     height: 35%;
+}
+.page-header {
     background-color: #84B8C3;
     color: white;
 }

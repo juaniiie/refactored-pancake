@@ -1,3 +1,22 @@
-<ul ng-repeat="user in indexCtrl.registeredUsers">
-    <li>{{user.first}}</li>
-</ul>
+<div class="page-header height-35 shadow" 
+     id="center-parent">
+    <div class="title-font" 
+         id="center-child">
+         Booster
+    </div>
+</div>
+<md-content>
+    <md-list>
+        <md-subheader class="md-no-sticky">Registered Users</md-subheader>
+        <md-list-item class="md-2-line" 
+                      ng-repeat="user in indexCtrl.registeredUsers">
+            <img ng-src="../assets/user_36px.svg" 
+                 class="md-avatar">
+            <div class="md-list-item-text" layout="column">
+                <h3>Name: {{user.first +" "+user.last}}</h3>
+                <h4>Vehicle: {{ user.year + " " + user.make +" "+ user.model}}</h4>
+            </div>
+            <md-divider ></md-divider>
+        </md-list-item>
+    </md-list>
+</md-content>    

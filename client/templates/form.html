@@ -1,15 +1,19 @@
-<div class="page-header shadow" id="center-parent">
-    <div class="title-font" id="center-child">Booster</div>
+<div class="page-header height-35 shadow" 
+     id="center-parent">
+    <div class="title-font" 
+         id="center-child">
+         Booster
+    </div>
 </div>
 <div ng-if="formCtrl.userData.page === 1">
     <div ng-include="'templates/userInfo.html'"></div>
 </div>
 <div ng-if="formCtrl.userData.page === 2">
-   <div ng-include="'templates/carInfo.html'"></div>
+    <div ng-include="'templates/carInfo.html'"></div>
 </div> 
 <div ng-if="formCtrl.userData.page === 3">
-   <div ng-include="'templates/creditInfo.html'"></div>
+    <div ng-include="'templates/creditInfo.html'"></div>
 </div>
 <div ng-if="formCtrl.userData.page === 4">
-   <div>Thanks!</div>
+    <div ng-include="'templates/thankyou.html'"></div>
 </div>

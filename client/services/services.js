@@ -2,18 +2,20 @@ class FormServices {
     
     constructor($state, IndexServices) {
         this.storage = localStorage;
-        this.state = $state;
         this.index = IndexServices;
+        this.errors = '';
     }
 
-    navToForm() {
-        this.state.go('form');
-    }
-
-    init() {
+     /**
+     * Returns userData stored in localStorage
+     */
+    fetchUserData() {
         return JSON.parse(this.storage.getItem('userData'));
     }
 
+    /**
+     * Returns userData object
+     */
     newUser() {
         return {
             first: '',
@@ -28,13 +30,26 @@ class FormServices {
         };
     }
 
+    /**
+     * Stringifies and tores userData in localStorage
+     * @param {Object} userData 
+     */
     save(userData) {
         this.storage.setItem('userData', JSON.stringify(userData));
     }
 
+    /**
+     * Stringifies and tores userData in localStorage
+     * @param {Object} userData 
+     */
     next(userData) {
-        userData.page++;
-        this.save(userData);
+        if (!this.index.userExists(userData.email)) {
+            userData.page++;
+            this.save(userData);
+            this.errors = '';
+        } else {
+            this.errors = 'User email already exists.';
+        }
     }
 
     previous(userData) {
@@ -43,17 +58,13 @@ class FormServices {
     }
 
     submit(userData) {
-        
-        this.next(userData);
-        
         if (!this.index.userExists(userData.email)) {
-
+            this.next(userData);
             this.index.registerUser(userData);
-
             this.storage.removeItem('userData');
-
+            this.errors = '';
         } else {
-            console.log('user already exists');
+            this.errors = 'User email already exists.';
         }
 
     }

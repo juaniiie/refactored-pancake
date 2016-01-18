@@ -3,6 +3,14 @@
          Booster
     </div>
 </div>
+<div ng-if="formCtrl.getErrors().length">
+    <md-toolbar class="md-accent md-hue-2 shadow">
+        <span flex></span>
+        <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+            <span class="md-flex">{{ formCtrl.getErrors() }}</span>
+        </h2>
+    </md-toolbar>    
+</div>
 <div ng-if="formCtrl.userData.page === 1">
     <div ng-include="'templates/userInfo.html'"></div>
 </div>
